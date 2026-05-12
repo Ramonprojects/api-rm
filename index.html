@@ -56,7 +56,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end; /* empurra conteúdo para baixo */
     }
     .card-line-top {
       position: absolute;
@@ -86,7 +86,13 @@
     .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(0,0,0,0.97) 35%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.1) 100%);
+      /* Rosto livre no topo, escurece só na metade inferior */
+      background: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.97) 30%,
+        rgba(0,0,0,0.60) 52%,
+        rgba(0,0,0,0.00) 100%
+      );
       z-index: 2;
     }
     .card-content {
@@ -94,8 +100,7 @@
       z-index: 3;
       padding: 20px 24px;
       text-align: center;
-      margin-top: auto;
-      margin-bottom: 8vh;
+      margin-bottom: 5vh;
     }
     .card-eyebrow {
       color: #fff;
